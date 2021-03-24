@@ -1,8 +1,7 @@
 package kr.priv.vo;
 
 public enum CommCalNotPosReason {
-    POS_REG("등록가능"), NOT_REG("등록불가"), FULL_REG("전부등록됨"), NOT_NOW("등록대기")
-    , NOT_PROC("운영안함"), PASS_DAY("지난간일자");
+    NOT_REG("등록불가"), FULL_REG("전부등록됨"), NOT_NOW("등록대기"), NOT_PROC("운영안함"), PASS_DAY("지난간일자");
 
     String strReason;
 

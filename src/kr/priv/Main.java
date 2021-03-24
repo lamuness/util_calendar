@@ -15,6 +15,7 @@ public class Main {
 
         //달력생성
         CommCalendar commCalendar = CalendarUtils.makeCalendar(year, month, new Function<CommCalendarDay, CommCalendarDay>() {
+            //생성시 체크해서 원하는 작업을 해도됨
             public CommCalendarDay apply(CommCalendarDay commCalendarDay) {
                 //1일이 생길때마다 체크해야하는 항목이 필요할경우 여기서 수행
                 if ("12".equals(commCalendarDay.getMonth()) && "31".equals(commCalendarDay.getDate())) {
@@ -45,7 +46,11 @@ public class Main {
             System.out.println("===============================================================================================================");
             for (int j = 0; j < commCalendar.getCommCalendarDays()[i].length; j++) {
                 CommCalendarDay item = commCalendar.getCommCalendarDays()[i][j];
-                System.out.print(item.getYear() + "-" + item.getMonth() + "-" + item.getDate() + " | ");
+                if (item.isCalledMonth()) {
+                    System.out.print(item.getYear() + "-" + item.getMonth() + "-" + item.getDate() + " | ");
+                } else {
+                    System.out.print("    -  -   | ");
+                }
             }
         }
         System.out.println("");
